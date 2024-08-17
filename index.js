@@ -18,9 +18,7 @@ app.listen(port, () => {
   console.log(`🔗 Powered By Robinayush`);
 });
 
-
-const statusMessages = ["Watching Voxo Studios","Get Started With /help","Your Discord Developement Buddy","voxo01.github.io/bot","Use Code VOXOV30R"];
-
+const statusMessages = ["Created By 🌸 SR カラス 🌸"];
 
 let currentIndex = 0;
 const channelId = '';
@@ -35,26 +33,19 @@ async function login() {
   }
 }
 
-
-
-
 function updateStatusAndSendMessages() {
   const currentStatus = statusMessages[currentIndex];
   const nextStatus = statusMessages[(currentIndex + 1) % statusMessages.length];
 
   client.user.setPresence({
-    activities: [{ name: currentStatus, type: ActivityType.Custom}],
-    status: 'dnd',
+    activities: [{ name: currentStatus, type: ActivityType.Custom }],
+    status: 'online',
   });
 
-  
   const textChannel = client.channels.cache.get(channelId);
 
   if (textChannel instanceof TextChannel) {
-   
     textChannel.send(`Bot status is: ${currentStatus}`);
-  } else {
-
   }
 
   currentIndex = (currentIndex + 1) % statusMessages.length;
@@ -71,5 +62,3 @@ client.once('ready', () => {
 });
 
 login();
-
-
