@@ -18,7 +18,7 @@ app.listen(port, () => {
   console.log(`🔗 Powered By Robinayush`);
 });
 
-const statusMessages = ["Created By 🌸 SR カラス 🌸"];
+const statusMessages = ["Am a Pancake 🥞"];
 
 let currentIndex = 0;
 const channelId = '';
